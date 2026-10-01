@@ -1,4 +1,4 @@
-const CACHE_NAME = 'customer-manager-v1';
+const CACHE_NAME = 'customer-v2';
 const urlsToCache = [
   './',
   './index.html',
@@ -7,16 +7,14 @@ const urlsToCache = [
   './manifest.json'
 ];
 
-self.addEventListener('install', event => {
-  event.waitUntil(
+self.addEventListener('install', e => {
+  e.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request).then(response => response || fetch(e.request))
   );
 });
