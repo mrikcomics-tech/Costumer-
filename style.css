@@ -1,16 +1,48 @@
-* { box-sizing: border-box; font-family: 'Tahoma', sans-serif; }
-body { margin: 0; background: #f4f7f6; color: #333; padding-bottom: 20px;}
-header { background: #0056b3; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
-header h1 { margin: 0; font-size: 1.1rem; }
-button { background: #ff9800; color: white; border: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s;}
-button:disabled { background: #ccc; }
-#statusMsg { text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; min-height: 40px;}
-main { padding: 10px 15px; }
-.form-section { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
-.form-section h2, .list-section h2 { margin-top: 0; font-size: 1.2rem; color: #0056b3;}
-form { display: flex; flex-direction: column; gap: 12px; }
-input, select { padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; width: 100%;}
-form button { background: #28a745; margin-top: 5px; font-size: 1.1rem;}
-.card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 12px; border-right: 4px solid #0056b3; }
-.card h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
-.card p { margin: 4px 0; font-size: 0.9rem; color: #555; }
+* { box-sizing: border-box; font-family: 'Tahoma', Arial, sans-serif; }
+body { margin: 0; background: #f9fbfc; color: #333; padding-bottom: 20px;}
+
+/* Header */
+header { background: #0d4a3b; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10;}
+.header-title h1 { margin: 0; font-size: 1.2rem; line-height: 1.4;}
+.header-title small { font-size: 0.75rem; color: #a8d5ba; }
+.sync-btn { background: transparent; color: white; border: 1px solid #a8d5ba; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; cursor: pointer;}
+.sync-btn:disabled { opacity: 0.5; }
+
+/* Tabs */
+.tabs-nav { display: flex; background: #ffffff; border-bottom: 1px solid #ddd; position: sticky; top: 72px; z-index: 9;}
+.tab-link { flex: 1; background: none; border: none; padding: 12px 0; font-size: 1rem; color: #555; cursor: pointer; border-bottom: 3px solid transparent;}
+.tab-link.active { color: #0d4a3b; font-weight: bold; border-bottom-color: #0d4a3b; }
+.tab-content { display: none; padding: 15px; }
+.tab-content.active { display: block; }
+
+/* Form Elements */
+.form-group { margin-bottom: 12px; display: flex; flex-direction: column;}
+.form-group label { text-align: right; font-size: 0.9rem; margin-bottom: 5px; color: #444; font-weight: bold;}
+input, select { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; background: #fff;}
+.mt-5 { margin-top: 5px; }
+
+/* Buttons */
+.action-btn { background: #f0f0f0; border: 1px solid #ccc; padding: 10px; border-radius: 4px; color: #333; cursor: pointer;}
+.form-actions { display: flex; gap: 10px; margin-top: 20px;}
+.form-actions button { flex: 1; padding: 12px; font-size: 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; border: none;}
+.clear-form-btn { background: #fff; border: 1px solid #ccc !important; color: #333;}
+.save-btn { background: #0d4a3b; color: white;}
+
+/* Customers Tab */
+.search-container { display: flex; gap: 10px; margin-bottom: 15px;}
+.search-container input { flex: 1; }
+.clear-btn { background: #fff; border: 1px solid #ccc; padding: 0 15px; border-radius: 4px; cursor: pointer;}
+.filters-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;}
+.record-count { text-align: right; font-weight: bold; color: #0d4a3b; margin-bottom: 10px;}
+
+/* Lists */
+.list-container { display: flex; flex-direction: column; gap: 10px;}
+.card { background: white; padding: 15px; border-radius: 6px; border: 1px solid #e0e0e0; border-right: 4px solid #0d4a3b; box-shadow: 0 1px 3px rgba(0,0,0,0.05);}
+.card h3 { margin: 0 0 8px 0; font-size: 1.1rem; color: #0d4a3b;}
+.card p { margin: 4px 0; font-size: 0.9rem; color: #444; }
+
+/* Trips Tab */
+.trip-add-container { display: flex; gap: 10px; margin-bottom: 20px;}
+.trip-add-container input { flex: 1; }
+.trip-item { background: white; padding: 12px; border-radius: 4px; border: 1px solid #ddd; display: flex; justify-content: space-between;}
+.trip-item button { background: #dc3545; color: white; border: none; border-radius: 4px; padding: 5px 10px;}
