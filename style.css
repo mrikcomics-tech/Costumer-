@@ -1,0 +1,16 @@
+* { box-sizing: border-box; font-family: 'Tahoma', sans-serif; }
+body { margin: 0; background: #f4f7f6; color: #333; padding-bottom: 20px;}
+header { background: #0056b3; color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+header h1 { margin: 0; font-size: 1.1rem; }
+button { background: #ff9800; color: white; border: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s;}
+button:disabled { background: #ccc; }
+#statusMsg { text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; min-height: 40px;}
+main { padding: 10px 15px; }
+.form-section { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+.form-section h2, .list-section h2 { margin-top: 0; font-size: 1.2rem; color: #0056b3;}
+form { display: flex; flex-direction: column; gap: 12px; }
+input, select { padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem; width: 100%;}
+form button { background: #28a745; margin-top: 5px; font-size: 1.1rem;}
+.card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 12px; border-right: 4px solid #0056b3; }
+.card h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
+.card p { margin: 4px 0; font-size: 0.9rem; color: #555; }
