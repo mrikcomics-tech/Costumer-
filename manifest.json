@@ -1,17 +1,20 @@
-{
-  "name": "إدارة الزبائن - الحاج عيسى",
-  "short_name": "الزبائن",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f4f7f6",
-  "theme_color": "#0056b3",
-  "dir": "rtl",
-  "lang": "ar",
-  "icons": [
-    {
-      "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+const CACHE_NAME = 'customer-v2';
+const urlsToCache = [
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './manifest.json'
+];
+
+self.addEventListener('install', e => {
+  e.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
+  );
+});
+
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request).then(response => response || fetch(e.request))
+  );
+});
